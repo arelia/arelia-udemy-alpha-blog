@@ -1,0 +1,20 @@
+<h1>Log In</h1>
+
+<!-- errors -->
+
+<%= form_for(:session, :html => {role: "form"}, url: login_path) do |f| %>
+
+    <p>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+    </p>
+    <p>
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+    </p>
+    <p>
+        <%= f.submit "Log in" %>
+    </p>
+<% end %>
+
+<%= link_to 'Cancel and return to Home', root_path %>
