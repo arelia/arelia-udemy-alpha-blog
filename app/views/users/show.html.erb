@@ -9,7 +9,8 @@
 
 <%= render 'articles/articles_listing' %>
 
- 
+<p><%= will_paginate @articles %></p>
+
 <p>
 <%= link_to 'Edit Your Profile', edit_user_path(@user) %> | <%= link_to 'Return to articles listing', articles_path %>
 </p>
