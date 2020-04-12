@@ -2,6 +2,7 @@
 
 <p><strong>Title: </strong><%= @article.title %></p>
 <p><strong>By: </strong><%= @article.user.username if @article.user %></p>
+<p><strong>Created</strong> <%= time_ago_in_words(@article.created_at) %> ago</p>
 <p><strong>Description: </strong><%= @article.description %></p>
 
 <% if logged_in? && current_user == @article.user %>
