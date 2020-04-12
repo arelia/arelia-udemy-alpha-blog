@@ -14,6 +14,8 @@
         <%= f.password_field :password %>
     </p>
     <p>
-        <%= f.submit "Sign up" %>
+        <%= f.submit(@user.new_record? ? "Sign up" : "Update account") %>
     </p>
 <% end %>
+
+<%= link_to 'Cancel and return to Home', root_path %>
