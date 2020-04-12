@@ -19,6 +19,9 @@
                 <td><%= user.email %></td>
                 <td><%= pluralize(user.articles.count, "article") %></td>
                 <td>Joined <%= time_ago_in_words(user.created_at) %> ago</td>
+                <% if logged_in? and current_user.admin? %>
+                <td><%= link_to "Delete this user", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete #{user.username} and all of their articles?"} %></td>
+                <% end %>
             </tr>
         <% end %>
     </tbody>
