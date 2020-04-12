@@ -1,9 +1,9 @@
 require 'digest/md5'
 
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :update, :show]
 
   def show
-    set_user
     @articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
@@ -26,11 +26,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    set_user
   end
 
   def update
-    set_user
     if @user.update(user_params)
       flash[:notice] = "Your account information was successfully updated!"
       redirect_to articles_path
