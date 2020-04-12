@@ -1,7 +1,10 @@
+require 'digest/md5'
+
 class UsersController < ApplicationController
 
   def show
     set_user
+    @articles = @user.articles
   end
 
   def new
