@@ -1,5 +1,3 @@
-require 'digest/md5'
-
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show]
 
