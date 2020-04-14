@@ -1,0 +1,5 @@
+<h1>Category Listing View: <%= @category.name.capitalize %></h1>
+
+<%= render 'articles/articles_listing' %>
+
+<p><%= will_paginate @category_articles %></p>
