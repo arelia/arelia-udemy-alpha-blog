@@ -6,5 +6,5 @@
 
 <% if logged_in? && current_user.admin? %>
     <%= link_to 'Edit Category Name', edit_category_path(@category) %> | 
-    <%# <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %> |  %>
+    <%= link_to 'Delete', category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
