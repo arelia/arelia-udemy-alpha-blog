@@ -4,7 +4,7 @@
 
 <p><%= will_paginate @category_articles %></p>
 
-<%# <% if logged_in? && (current_user == @article.user || current_user.admin?) %> %>
+<% if logged_in? && current_user.admin? %>
     <%= link_to 'Edit Category Name', edit_category_path(@category) %> | 
     <%# <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %> |  %>
-<%# <% end %> %>
+<% end %>
