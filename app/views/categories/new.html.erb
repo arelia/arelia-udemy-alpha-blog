@@ -1,0 +1,15 @@
+<h1>Create new category</h1>
+
+<%= render 'shared/errors', obj: @category %>
+
+<%= form_with(model: @category, local: true) do |f| %>
+    <p>
+        <%= f.label :name %><br/>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
+
+<%= link_to 'Cancel and return to Home', root_path %>
