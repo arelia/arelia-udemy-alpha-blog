@@ -1,13 +1,18 @@
+<ul>
+    <li><%= link_to 'Articles Listing', articles_path %></li>
+    <li><%= link_to 'Users Listing', users_path %></li>
+    <li><%= link_to 'Categories Listing', categories_path %></li>
+    <li><%= link_to 'About', about_path %></li>
+</ul>
 
-<%= link_to 'Articles listing', articles_path %> | 
-<%= link_to 'Users listing', users_path %> | 
-<%= link_to 'About', about_path %> | 
-
-<% if logged_in? %>
-    <%= link_to 'Log Out', logout_path, method: :delete %> | 
-    <%= link_to 'Edit your profile', edit_user_path(current_user) %> | 
-    <%= link_to "#{current_user.username} #{' (Admin)' if current_user.admin?}", user_path(current_user) %>
-<% else %>
-    <%= link_to 'Log In', login_path %> | 
-    <%= link_to 'Sign Up', signup_path %>
-<% end %>
+<ul>
+    <% if logged_in? %>
+        <li>You are: <%= link_to "#{current_user.username} #{' (Admin)' if current_user.admin?}", user_path(current_user) %></li>
+        <li><%= link_to 'Edit your profile', edit_user_path(current_user) %></li>
+        <li><%= link_to 'Create New Category', new_category_path %></li>
+        <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+    <% else %>
+        <li><%= link_to 'Log In', login_path %></li>
+        <li><%= link_to 'Sign Up', signup_path %></li>
+    <% end %>
+</ul>
