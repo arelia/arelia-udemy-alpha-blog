@@ -4,6 +4,9 @@
 <p><strong>By: </strong><%= @article.user.username if @article.user %></p>
 <p><strong>Created</strong> <%= time_ago_in_words(@article.created_at) %> ago</p>
 <p><strong>Description: </strong><%= @article.description %></p>
+<% if @article.categories.any? %>
+<p><strong>Categories: </strong><%= render @article.categories %></p>
+<% end %>
 
 <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
     <%= link_to 'Edit', edit_article_path(@article) %> | 
