@@ -17,9 +17,9 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   # This is exactly the same as https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/learn/lecture/3852558#overview
-  # test "should get show" do
-  #   get(:show, {'id' => @category.id})
-  #   assert_response :success
-  # end
+  test "should get show" do
+    get(:show, params: {id: @category.id})
+    assert_response :success
+  end
 
 end
